@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 5885978259066793019}
   - component: {fileID: 3178831383468113989}
   - component: {fileID: 554471302895476134}
-  - component: {fileID: 3501609289511746113}
+  - component: {fileID: 7632574793602594422}
   m_Layer: 0
   m_Name: PlayerGoal
   m_TagString: Untagged
@@ -160,8 +160,8 @@ MonoBehaviour:
   playerTag: Player1
   isSatisfied: 0
   satisfactionIndicator: {fileID: 4353960090794628320}
-  source: {fileID: 3501609289511746113}
---- !u!82 &3501609289511746113
+  source: {fileID: 7632574793602594422}
+--- !u!82 &7632574793602594422
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,7 +173,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2e9e38ba9014b4946bcc575b9f52fd17, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
