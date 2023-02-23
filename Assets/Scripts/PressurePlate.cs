@@ -27,7 +27,8 @@ public class PressurePlate : MonoBehaviour
             Debug.Log("Player is on pressure plate");
             isPressed = true;
             door.GetComponent<PressureDoor>().active = true;
-            transform.position.Set(transform.position.x, transform.position.y - 1f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y - 0.125f, transform.position.z);
+            
         }
     }
 
@@ -38,7 +39,7 @@ public class PressurePlate : MonoBehaviour
             Debug.Log("Player is off pressure plate");
             isPressed = false;
             door.GetComponent<PressureDoor>().active = false;
-            transform.position.Set(transform.position.x, transform.position.y + 1f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y + 0.125f, transform.position.z);
         }
     }
 }
