@@ -15,6 +15,8 @@ namespace AGDDPlatformer
         public AudioSource source;
         public AudioClip jumpSound;
 
+        GameObject spawnPoint;
+
         Vector2 startPosition;
         bool startOrientation;
 
@@ -32,6 +34,9 @@ namespace AGDDPlatformer
         {
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             lastJumpTime = -jumpBufferTime * 2;
+
+            SetSpawnPoint();
+            transform.position = spawnPoint.transform.position;
 
             startPosition = transform.position;
             startOrientation = spriteRenderer.flipX;
@@ -130,6 +135,29 @@ namespace AGDDPlatformer
         public void SetJumpBoost(Vector2 jumpBoost)
         {
             this.jumpBoost = jumpBoost;
+        }
+
+        private void KillPlayer(){
+            transform.position = spawnPoint.transform.position;
+        }
+
+        private void SetSpawnPoint(){
+            if(gravityModifier == 1){
+                spawnPoint = GameObject.FindWithTag("BlueSpawnPoint");
+            }else if(gravityModifier == -1){
+                spawnPoint = GameObject.FindWithTag("RedSpawnPoint");
+            }
+        }
+
+        void OnCollisionEnter2D(Collision2D collider){
+            if(collider.gameObject.tag == "BlueSpike" && gravityModifier == 1){
+                Debug.Log("kill player");
+                KillPlayer();
+            }
+            if(collider.gameObject.tag == "RedSpike" && gravityModifier == -1){
+                Debug.Log("kill player");
+                KillPlayer();
+            }
         }
     }
 }
