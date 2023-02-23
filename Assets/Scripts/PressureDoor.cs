@@ -39,7 +39,7 @@ public class PressureDoor : MonoBehaviour
 
             if (upsideDown == false)
             {
-                if (transform.position.y >= startPos.y + maxDistance | transform.position.x <= startPos.x - maxDistance)
+                if (transform.position.y >= startPos.y + maxDistance || transform.position.x <= startPos.x - maxDistance)
                 {
                     Debug.Log("If 1");
                     return;
@@ -48,7 +48,7 @@ public class PressureDoor : MonoBehaviour
             }
             else
             {
-                if (transform.position.y <= startPos.y - maxDistance | transform.position.x >= startPos.x + maxDistance)
+                if (transform.position.y <= startPos.y - maxDistance || transform.position.x >= startPos.x + maxDistance)
                 {
                     Debug.Log("If 3");
                     return;
@@ -57,23 +57,25 @@ public class PressureDoor : MonoBehaviour
             }
     }
 
-    public void CloseDoor()
+public void CloseDoor()
+{
+    if (upsideDown == false)
     {
-        if (upsideDown == false)
+        if (transform.position.y <= startPos.y && transform.position.x >= startPos.x)
         {
-            if (transform.position.y <= startPos.y)
-            {
-                return;
-            }
-            transform.Translate(Vector3.down * closeSpeed * Time.deltaTime);
+            Debug.Log("If 2");
+            return;
         }
-        else
-        {
-            if (transform.position.y >= startPos.y)
-            {
-                return;
-            }
-            transform.Translate(Vector3.up * closeSpeed * Time.deltaTime);
-        }
+        transform.Translate(Vector3.down * closeSpeed * Time.deltaTime);
     }
+    else
+    {
+        if (transform.position.y >= startPos.y && transform.position.x <= startPos.x)
+        {
+            Debug.Log("If 4");
+            return;
+        }
+        transform.Translate(Vector3.up * closeSpeed * Time.deltaTime);
+    }
+}
 }

@@ -7,6 +7,7 @@ public class PressurePlate : MonoBehaviour
 
     public GameObject door;
     public bool isPressed = false;
+    public bool upsideDown = false;
     
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,14 @@ public class PressurePlate : MonoBehaviour
             Debug.Log("Player is on pressure plate");
             isPressed = true;
             door.GetComponent<PressureDoor>().active = true;
-            transform.position = new Vector3(transform.position.x, transform.position.y - 0.125f, transform.position.z);
+            if (upsideDown == false)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y - 0.125f, transform.position.z);
+            }
+            else
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y + 0.125f, transform.position.z);
+            }
             
         }
     }
@@ -38,8 +46,15 @@ public class PressurePlate : MonoBehaviour
         {
             Debug.Log("Player is off pressure plate");
             isPressed = false;
-            door.GetComponent<PressureDoor>().active = false;
-            transform.position = new Vector3(transform.position.x, transform.position.y + 0.125f, transform.position.z);
+            door.GetComponent<PressureDoor>().active = false; 
+            if (upsideDown == false)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y + 0.125f, transform.position.z);
+            }
+            else
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y - 0.125f, transform.position.z);
+            }
         }
     }
 }
