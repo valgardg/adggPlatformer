@@ -33,32 +33,43 @@ public class PressureDoor : MonoBehaviour
 
     public void OpenDoor()
     {
-            if (transform.position.y >= startPos.y + maxDistance)
-            {
-                return;
-            }
             if (upsideDown == false)
             {
+                if (transform.position.y >= startPos.y + maxDistance)
+                {
+                    return;
+                }
                 transform.Translate(Vector3.up * openSpeed * Time.deltaTime);
             }
             else
             {
+                if (transform.position.y <= startPos.y - maxDistance)
+                {
+                    return;
+                }
                 transform.Translate(Vector3.down * openSpeed * Time.deltaTime);
             }
     }
 
     public void CloseDoor()
     {
-        if (transform.position.y <= startPos.y)
-        {
-            return;
-        }
+        Debug.Log("CloseDoor");
+        Debug.Log(upsideDown);
+
         if (upsideDown == false)
         {
+            if (transform.position.y <= startPos.y)
+            {
+                return;
+            }
             transform.Translate(Vector3.down * closeSpeed * Time.deltaTime);
         }
         else
         {
+            if (transform.position.y >= startPos.y)
+            {
+                return;
+            }
             transform.Translate(Vector3.up * closeSpeed * Time.deltaTime);
         }
     }
