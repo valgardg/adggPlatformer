@@ -1988,3 +1988,19 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1316.126012 seconds.
+  path: Assets/Scenes/PressurePlateTest.unity
+  artifactKey: Guid(1b47fbece69dd46c7a2ad1eb9580552e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/PressurePlateTest.unity using Guid(1b47fbece69dd46c7a2ad1eb9580552e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f89e61da1ca639adf3a474a7a460b698') in 0.003819 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 8.764668 seconds.
+  path: Assets/Scenes/PressurePlateTutorial.unity
+  artifactKey: Guid(1b47fbece69dd46c7a2ad1eb9580552e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/PressurePlateTutorial.unity using Guid(1b47fbece69dd46c7a2ad1eb9580552e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a9b5b3c611357d3f8758c2413538f47') in 0.000447 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
