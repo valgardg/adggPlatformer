@@ -26,6 +26,7 @@ public class DoorScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print(collision.name);
         string color = gameObject.name.Split(' ')[0];
         for (int i = 1; i < collision.transform.childCount; i++)
         {

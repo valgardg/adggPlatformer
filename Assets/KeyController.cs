@@ -10,6 +10,7 @@ public class KeyController : MonoBehaviour
     public Rigidbody2D rigidbody;
     public BoxCollider2D boxcollider;
     public BoxCollider2D groundTrigger;
+    public BoxCollider2D otherTrigger;
     public float bottomMargin;
     public float leftMargin;
     public bool flipping;
@@ -40,6 +41,7 @@ public class KeyController : MonoBehaviour
             rigidbody.gravityScale = -rigidbody.gravityScale;
             groundTrigger.enabled = true;
             flipping = false;
+            transform.SetParent(null);
         }
         if (attatched != null)
         {
@@ -50,17 +52,43 @@ public class KeyController : MonoBehaviour
     {
         if (collision.gameObject.name == "Player1" || collision.gameObject.name == "Player2")
         {
+            transform.SetParent(collision.transform);
             attatched = collision.gameObject;
             boxcollider.enabled = false;
+            if (collision.gameObject.name == "Player1")
+            {
+                gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
+                if (bottomMargin < 0)
+                {
+                    bottomMargin = -bottomMargin;
+                    leftMargin = -leftMargin;
+                }
+                transform.position = new Vector3(attatched.transform.position.x + leftMargin, attatched.transform.position.y + bottomMargin, attatched.transform.position.z);
+            }
+            else
+            {
+                gameObject.transform.rotation = new Quaternion(0, 0, 0, 180);
+                if (bottomMargin > 0)
+                {
+                    bottomMargin = -bottomMargin;
+                    leftMargin = -leftMargin;
+                }
+                transform.position = new Vector3(attatched.transform.position.x + leftMargin, attatched.transform.position.y + bottomMargin, attatched.transform.position.z);
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name == "Tilemap")
+        if (collision.name == "Tilemap" && groundTrigger.enabled)
         {
             groundTrigger.enabled = false;
             boxcollider.enabled = true;
+        }
+        if (collision.name == "Keyflipper")
+        {
+            flipping = true;
+            gameObject.transform.position = collision.transform.position;
         }
     }
 }
