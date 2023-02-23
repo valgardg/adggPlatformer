@@ -8,6 +8,8 @@ TagManager:
   - Player2
   - RedSpike
   - BlueSpike
+  - RedSpawnPoint
+  - BlueSpawnPoint
   layers:
   - Default
   - TransparentFX
