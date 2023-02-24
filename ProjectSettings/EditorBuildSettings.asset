@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SpikesLevel.unity
     guid: 61a8e23753e8d462a984bb4e14612ca6
+  - enabled: 1
+    path: Assets/Scenes/SpikesTutorialLevel.unity
+    guid: f9668132dc5ad439da586e6b950483a4
   m_configObjects: {}
