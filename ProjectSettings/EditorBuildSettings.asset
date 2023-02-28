@@ -18,15 +18,21 @@ EditorBuildSettings:
     path: Assets/Scenes/SpikesLevel.unity
     guid: 61a8e23753e8d462a984bb4e14612ca6
   - enabled: 1
+    path: Assets/Scenes/SpikeLevelJoe.unity
+    guid: 685347e9245b4486fbb864b15df789d0
+  - enabled: 1
     path: Assets/Scenes/PressurePlateTutorial.unity
     guid: 1b47fbece69dd46c7a2ad1eb9580552e
   - enabled: 1
-    path: Assets/Scenes/SpikeLevelJoe.unity
-    guid: 685347e9245b4486fbb864b15df789d0
+    path: Assets/Scenes/PressurePlateLevel2.unity
+    guid: dc9bd43b21629411badb59c5e9a45285
   - enabled: 1
     path: Assets/Scenes/KeyTutorial.unity
     guid: 10f7935247970482fa80263682daef0e
   - enabled: 1
     path: Assets/Scenes/ArnthorLevel.unity
     guid: 64f3d70e422ebfd448c2f2018b739a6f
+  - enabled: 1
+    path: Assets/Scenes/ValliLevel.unity
+    guid: 12f1c2bb408a44060a9d44e7eaa679aa
   m_configObjects: {}
