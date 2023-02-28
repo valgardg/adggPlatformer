@@ -20,13 +20,12 @@ public class DoorScript : MonoBehaviour
         if (opening)
         {
             gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + openspeed * Time.deltaTime, gameObject.transform.position.z);
-            gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y - openspeed * Time.deltaTime, gameObject.transform.localScale.z);
+            gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y - Mathf.Abs(openspeed) * Time.deltaTime, gameObject.transform.localScale.z);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.name);
         string color = gameObject.name.Split(' ')[0];
         for (int i = 1; i < collision.transform.childCount; i++)
         {

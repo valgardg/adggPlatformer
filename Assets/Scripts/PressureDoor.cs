@@ -33,15 +33,15 @@ public class PressureDoor : MonoBehaviour
 
     public void OpenDoor()
     {
-        // Debug.Log(transform.position.y);
-        Debug.Log(startPos.x);
-        Debug.Log(transform.position.x);
+        // //Debug.Log(transform.position.y);
+        //Debug.Log(startPos.x);
+        //Debug.Log(transform.position.x);
 
             if (upsideDown == false)
             {
                 if (transform.position.y >= startPos.y + maxDistance || transform.position.x <= startPos.x - maxDistance)
                 {
-                    Debug.Log("If 1");
+                    //Debug.Log("If 1");
                     return;
                 }
                 transform.Translate(Vector3.up * openSpeed * Time.deltaTime);
@@ -50,7 +50,7 @@ public class PressureDoor : MonoBehaviour
             {
                 if (transform.position.y <= startPos.y - maxDistance || transform.position.x >= startPos.x + maxDistance)
                 {
-                    Debug.Log("If 3");
+                    //Debug.Log("If 3");
                     return;
                 }
                 transform.Translate(Vector3.down * openSpeed * Time.deltaTime);
@@ -63,7 +63,7 @@ public void CloseDoor()
     {
         if (transform.position.y <= startPos.y && transform.position.x >= startPos.x)
         {
-            Debug.Log("If 2");
+            //Debug.Log("If 2");
             return;
         }
         transform.Translate(Vector3.down * closeSpeed * Time.deltaTime);
@@ -72,7 +72,7 @@ public void CloseDoor()
     {
         if (transform.position.y >= startPos.y && transform.position.x <= startPos.x)
         {
-            Debug.Log("If 4");
+            //Debug.Log("If 4");
             return;
         }
         transform.Translate(Vector3.up * closeSpeed * Time.deltaTime);

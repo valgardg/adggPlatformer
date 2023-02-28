@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/KeyTutorial.unity
     guid: 10f7935247970482fa80263682daef0e
   - enabled: 1
-    path: Assets/Scenes/ArnthorLevel.unity
+    path: Assets/Scenes/KeysPlatesLevel.unity
     guid: 64f3d70e422ebfd448c2f2018b739a6f
   - enabled: 1
     path: Assets/Scenes/ValliLevel.unity

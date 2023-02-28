@@ -20,7 +20,6 @@ public class KeyController : MonoBehaviour
     void Start()
     {
         rotation = 0;
-        
     }
 
     // Update is called once per frame
@@ -28,18 +27,19 @@ public class KeyController : MonoBehaviour
     {
         if (flipping)
         {
+            transform.SetParent(null);
             rigidbody.velocity = new Vector2(0f, 0f);
             attatched = null;
             gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
             bottomMargin = -bottomMargin;
             leftMargin = -leftMargin;
-            if (rotation != 0) rotation = 0;
-            else rotation += 180;
+            if (Mathf.Abs(rotation) == 180) rotation = 0;
+            else rotation = 180;
             transform.rotation = new Quaternion(0, 0, rotation, 0);
             rigidbody.gravityScale = -rigidbody.gravityScale;
             groundTrigger.enabled = true;
             flipping = false;
-            transform.SetParent(null);
+            otherTrigger.enabled = false;
         }
         if (attatched != null)
         {
@@ -65,7 +65,7 @@ public class KeyController : MonoBehaviour
             }
             else
             {
-                gameObject.transform.rotation = new Quaternion(0, 0, 0, 180);
+                gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
                 if (bottomMargin > 0)
                 {
                     bottomMargin = -bottomMargin;
@@ -82,11 +82,13 @@ public class KeyController : MonoBehaviour
         {
             groundTrigger.enabled = false;
             boxcollider.enabled = true;
+            otherTrigger.enabled = true;
         }
-        if (collision.name == "Keyflipper")
+        if (collision.name.Contains("Keyflipper") && otherTrigger.enabled)
         {
             flipping = true;
             gameObject.transform.position = collision.transform.position;
+            boxcollider.enabled = false;
         }
     }
 }
