@@ -14,7 +14,6 @@ public class KeyController : MonoBehaviour
     public float bottomMargin;
     public float leftMargin;
     public bool flipping;
-    public float dropoff;
 
 
     // Start is called before the first frame update
@@ -31,8 +30,7 @@ public class KeyController : MonoBehaviour
         {
             rigidbody.velocity = new Vector2(0f, 0f);
             attatched = null;
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y+dropoff, gameObject.transform.position.z);
-            dropoff = -dropoff;
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
             bottomMargin = -bottomMargin;
             leftMargin = -leftMargin;
             if (rotation != 0) rotation = 0;

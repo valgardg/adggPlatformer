@@ -879,7 +879,7 @@ PrefabInstance:
     - target: {fileID: 1632902980064706188, guid: fd2ef3b83665d554f847573761fcceee,
         type: 3}
       propertyPath: m_GravityScale
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1632902980064706189, guid: fd2ef3b83665d554f847573761fcceee,
         type: 3}
@@ -904,7 +904,7 @@ PrefabInstance:
     - target: {fileID: 1632902980064706189, guid: fd2ef3b83665d554f847573761fcceee,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1632902980064706189, guid: fd2ef3b83665d554f847573761fcceee,
         type: 3}
@@ -919,7 +919,7 @@ PrefabInstance:
     - target: {fileID: 1632902980064706189, guid: fd2ef3b83665d554f847573761fcceee,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1632902980064706189, guid: fd2ef3b83665d554f847573761fcceee,
         type: 3}
@@ -934,12 +934,17 @@ PrefabInstance:
     - target: {fileID: 1632902980064706189, guid: fd2ef3b83665d554f847573761fcceee,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1632902980064706190, guid: fd2ef3b83665d554f847573761fcceee,
         type: 3}
       propertyPath: dropoff
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1632902980064706190, guid: fd2ef3b83665d554f847573761fcceee,
+        type: 3}
+      propertyPath: flipping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1632902980064706190, guid: fd2ef3b83665d554f847573761fcceee,
         type: 3}
@@ -1056,6 +1061,21 @@ PrefabInstance:
       propertyPath: groundTrigger
       value: 
       objectReference: {fileID: 939608108}
+    - target: {fileID: 5339109788445400880, guid: fd2ef3b83665d554f847573761fcceee,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339109788445400880, guid: fd2ef3b83665d554f847573761fcceee,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339109788445400880, guid: fd2ef3b83665d554f847573761fcceee,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
