@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/KeyPlateLevel.unity
     guid: 852dcb6295e1ed1449f3c428f70280c7
   - enabled: 1
+    path: Assets/Scenes/KeyPlateNerfed.unity
+    guid: 28a2e90ba2ce5414d9491694e3333df8
+  - enabled: 1
     path: Assets/Scenes/ValliLevel.unity
     guid: 12f1c2bb408a44060a9d44e7eaa679aa
   m_configObjects: {}
