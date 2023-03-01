@@ -598,6 +598,11 @@ PrefabInstance:
       propertyPath: door
       value: 
       objectReference: {fileID: 1821098226}
+    - target: {fileID: 2785772980352644924, guid: 296360f0f383c42d582b44faac50ab3f,
+        type: 3}
+      propertyPath: upsideDown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2922218567337870900, guid: 296360f0f383c42d582b44faac50ab3f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1518,7 +1523,7 @@ PrefabInstance:
     - target: {fileID: 4691332086608218244, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.75
+      value: 10.356563
       objectReference: {fileID: 0}
     - target: {fileID: 4691332086608218244, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
