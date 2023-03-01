@@ -25,10 +25,16 @@ public class KeyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            if (Time.timeScale == 1f) Time.timeScale = 0.1f;
+            else Time.timeScale = 1f;
+        }
         if (flipping)
         {
-            transform.SetParent(null);
             rigidbody.velocity = new Vector2(0f, 0f);
+            rigidbody.angularVelocity = 0f;
+            transform.SetParent(null);
             attatched = null;
             gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
             bottomMargin = -bottomMargin;
@@ -44,12 +50,14 @@ public class KeyController : MonoBehaviour
         if (attatched != null)
         {
             transform.position = new Vector3(attatched.transform.position.x + leftMargin, attatched.transform.position.y + bottomMargin, attatched.transform.position.z);
+            rigidbody.velocity = new Vector2(0f, 0f);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Player1" || collision.gameObject.name == "Player2")
         {
+            rigidbody.angularVelocity = 0f;
             transform.SetParent(collision.transform);
             attatched = collision.gameObject;
             boxcollider.enabled = false;
